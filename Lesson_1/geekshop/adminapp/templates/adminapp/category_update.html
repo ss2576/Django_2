@@ -1,0 +1,19 @@
+{% extends 'adminapp/base.html' %}
+
+{% block content %}
+    <hr>
+    <div class="confirmation-page">
+        <form class="confirmation-page__form" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_table }}
+            <div class="input-form__submit-buttons">
+                <button type="submit" class="form-control">
+                    Save
+                </button>
+                <button type="button" class="form-control">
+                    <a href="{% url 'admin:categories' %}">Cancel</a>
+                </button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

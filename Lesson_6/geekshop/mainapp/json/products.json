@@ -1,0 +1,38 @@
+[
+  {
+    "category": "дом",
+    "name": "комфорт 1",
+    "image": "product_images/chair_1.jpg",
+    "short_desc": "комфортный стул",
+    "description": "подойдёт для просмотра фильмов",
+    "price": "3599.5",
+    "quantity": "17"
+  },
+   {
+    "category": "дом",
+    "name": "комфорт 2",
+    "image": "product_images/chair_2.jpg",
+    "short_desc": "очень комвортный стул",
+    "description": "подойдёт для общения с друзьями",
+    "price": "3689.2",
+    "quantity": "21"
+  },
+   {
+    "category": "дом",
+    "name": "люкс",
+    "image": "product_images/chair_3.jpg",
+    "short_desc": "использованы премиальные материалы",
+    "description": "для тех,кто стремится к лучшему",
+    "price": "8154.99",
+    "quantity": "7"
+  },
+   {
+    "category": "офис",
+    "name": "стандарт",
+    "image": "product_images/chair_4.jpg",
+    "short_desc": "универсальное решение",
+    "description": "подойдёт для любого офиса",
+    "price": "189.25",
+    "quantity": "27"
+  }
+]

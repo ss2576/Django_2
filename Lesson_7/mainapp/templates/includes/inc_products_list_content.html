@@ -1,0 +1,83 @@
+{% load staticfiles %}
+
+
+<div class="links clearfix">
+   {% include 'includes/inc_categories_menu.html' %}
+</div>
+
+
+    <div class="products_list">
+      <div class="category_products_list title clearfix ">
+        <h2>Категория: "{{ category.name|title }}"</h2>
+      </div>
+      <div class="category_products_list paginator_index_products">
+              {% if products.has_previous %}
+                <a href="{% url 'products:page' category.pk products.previous_page_number %}"> << </a>
+              {% endif %}
+              <b class="current">
+                страница {{ products.number }} из
+                {{ products.paginator.num_pages }}
+              </b>
+              {% if products.has_next %}
+                <a href="{% url 'products:page' category.pk products.next_page_number %}"> >> </a>
+              {% endif %}
+      </div>
+
+      <div class="category-products clearfix">
+      <div class="tab-content">
+        <table>
+             {% for i in products %}
+                  {% if i|length > 1 %}
+                        <tr class="tab-content">
+                            {% for product in i  %}
+                                    <td>
+                                        <div class="block">
+                                              <a href="{% url 'products:product' product.pk %}">
+                                                    <img src="/media/{{ product.image }}" alt="{{ product.short_desc }}">
+                                                    <div class="text">
+                                                      <img src="{% static 'img/icon-hover.png' %}" alt="hover">
+                                                      <h4>{{ product.name }}</h4>
+                                                      <p>{{ product.description }} </p>
+                                                      <p>{{ product.category }} </p>
+                                                    </div>
+                                              </a>
+                                        </div>
+                                    </td>
+                              {% endfor %}
+                         </tr>
+                  {% else %}
+                        <tr>
+                            <td>
+                                <div class="block">
+                                      <a href="{% url 'products:product' i.pk %}">
+                                            <img src="/media/{{ i.image }}" alt="{{ i.short_desc }}">
+                                            <div class="text">
+                                              <img src="{% static 'img/icon-hover.png' %}" alt="hover">
+                                              <h4>{{ i.name }}</h4>
+                                              <p>{{ i.description }} </p>
+                                              <p>{{ i.category }} </p>
+                                            </div>
+                                      </a>
+                                </div>
+                            </td>
+                        </tr>
+                  {% endif %}
+              {% endfor %}
+           </table>
+       </div>
+            <div class="category_products_list paginator_index_products">
+              {% if products.has_previous %}
+                <a href="{% url 'products:page' category.pk products.previous_page_number %}"> << </a>
+              {% endif %}
+              <b class="current">
+                страница {{ products.number }} из
+                {{ products.paginator.num_pages }}
+              </b>
+              {% if products.has_next %}
+                <a href="{% url 'products:page' category.pk products.next_page_number %}"> >> </a>
+              {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="clr"></div>

@@ -1,0 +1,23 @@
+{% extends 'adminapp/base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+    <div class="confirmation-page">
+        Уверены, что хотите удалить продукт
+        <strong> </strong>?
+        <form class="confirmation-page__form" action="#" method="post">
+            {% csrf_token %}
+
+                <button class="form-control" type="submit">
+                    Удалить
+                </button>
+                <button class="form-control" type="button">
+                    <a href="{{ request.META.HTTP_REFERER }}">
+                        Отмена
+                    </a>
+                </button>
+
+        </form>
+    </div>
+{% endblock %}

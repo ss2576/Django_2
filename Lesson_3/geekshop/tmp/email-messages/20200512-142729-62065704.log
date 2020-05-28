@@ -1,0 +1,13 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: 
+ =?utf-8?b?0J/QvtC00YLQstC10YDQttC00LXQvdC40LUg0YPRh9C10YLQvdC+0Lkg0LfQsNC/?=
+ =?utf-8?b?0LjRgdC4IHN0YXRz?=
+From: django@geekshop.local
+To: ss2576-5@mail.ru
+Date: Tue, 12 May 2020 11:27:29 -0000
+Message-ID: <158928284902.2248.17006321478619269911@support5.MOSITALMED.loc>
+
+Для подтверждения учетной записи stats на портале http://localhost:8000 перейдите по ссылке:http://localhost:8000/auth/verify/ss2576-5@mail.ru/1d0a77d0064d0bc5db922daa67f1d0de0d188150/
+-------------------------------------------------------------------------------

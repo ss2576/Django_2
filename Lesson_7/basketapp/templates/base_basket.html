@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>
+    {% block title %}
+      {{ title|title }}
+    {% endblock %}
+  </title>
+  {% block css %}
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/font-awesome/css/font-awesome.css' %}">
+  {% endblock %}
+  {% block js %}
+      <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+      <script src="{% static 'js/basket_scripts.js' %}"></script>
+  {% endblock %}
+</head>
+<body>
+  <div class="basket_container">
+    <div class="h2 text-center head">
+      Ваша корзина,
+      {% if user.first_name %}
+        {{ user.first_name|title}}
+      {% else %}
+        Пользователь
+      {% endif %}
+    </div>
+        <img src="/media/{{ user.avatar|default:'users_avatars/default.jpg' }}" alt="{{ object.username }}">
+
+    {% block content %}
+    {% endblock %}
+  </div>
+  {% block date %}
+   <h3 class="time_now">Текущая дата  - {% now "m.j.Yг. H:i" %}</h3>
+  {% endblock %}
+</body>
+</html>

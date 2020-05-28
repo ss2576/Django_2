@@ -1,0 +1,55 @@
+{% extends 'adminapp/base.html' %}
+{% load staticfiles %}
+{% load my_tags %}
+
+{% block content %}
+
+             <button class="products_list_new_product_button">
+              <a href="{% url 'admin:product_create' category.pk %}">
+                добавить новый продукт категории : {{ category|upper }}
+              </a>
+            </button>
+            <button class="products_list_categories_button">
+               <a href={% url 'admin:categories' %}>
+                    назад
+               </a>
+            </button>
+
+        <div class="products_list_margin">
+            {% for object in product_category_list %}
+                <div class="products_list">
+                    <div class="category_record {% if not object.is_active %}not_active{% endif %}">
+                          <div class="div_product_list products_list_img">
+                                  <img src="{{ object.image|media_folder_products }}" alt="{{ object.name }}">
+                          </div>
+                          <div class="div_product_list products_list_form">
+                                <b>{{ object.name|title }}</b>
+                                <p>цена</p>
+                                <b>{{ object.price }} руб</b>
+                                <p>количество</p>
+                                <b>{{ object.quantity }}</b>
+                                <p>{{ object.short_desc }}</p>
+                                <b>  {% if not object.is_active %}товар не активен !{% endif %}</b>
+                          </div>
+                          <div class="div_product_list ">
+                               <button class="products_list_button_view" >
+                                      <a href={% url 'admin:product_read' object.pk %}>
+                                        подробнее
+                                      </a>
+                               </button>
+                               <button  class="products_list_button_update">
+                                      <a href={% url 'admin:product_update' object.pk %}>
+                                        редактировать
+                                      </a>
+                               </button>
+                               <button class="products_list_button_delete">
+                                      <a href={% url 'admin:product_delete' object.pk %}>
+                                        удалить
+                                      </a>
+                               </button>
+                          </div>
+                    </div>
+                </div>
+           {% endfor%}
+        </div>
+{% endblock %}

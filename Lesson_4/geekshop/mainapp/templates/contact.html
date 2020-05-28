@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block menu %}
+		<div class="hero-white">
+			<div class="header clearfix">
+				<a href="/" class="logo"></a>
+				{% include 'includes/inc_menu.html' %}
+				<a href="#" class="search"></a>
+                <a href="#" class="basket"></a>
+				 <a href="{% url 'basket:view' %}" class="basket2">
+				<span>
+					{% if basket %} {{ basket|length }} {% endif %}
+				</span>
+				</a>
+			</div>
+		</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+			<div class="hero">
+				<h1>наши контакты</h1>
+			</div>
+
+			<div class="location">
+				<div class="location-1">
+					<i class="fa fa-map-marker fa-5x"></i>
+					<h4>Москва</h4>
+					<div class="contacts">
+						<h5>Телефон</h5>
+						<p>+7-888-888-8888</p>
+					</div>
+					<div class="contacts">
+						<h5>Email</h5>
+						<p>info@geekshop.ru</p>
+					</div>
+					<div class="contacts">
+						<h5>Адрес</h5>
+						<p>В пределах МКАД</p>
+					</div>
+				</div>
+				<div class="location-1">
+					<i class="fa fa-map-marker fa-5x"></i>
+					<h4>Москва</h4>
+					<div class="contacts">
+						<h5>Телефон</h5>
+						<p>+7-888-888-8888</p>
+					</div>
+					<div class="contacts">
+						<h5>Email</h5>
+						<p>info@geekshop.ru</p>
+					</div>
+					<div class="contacts">
+						<h5>Адрес</h5>
+						<p>В пределах МКАД</p>
+					</div>
+				</div>
+				<div class="location-1">
+					<i class="fa fa-map-marker fa-5x"></i>
+					<h4>Москва</h4>
+					<div class="contacts">
+						<h5>Телефон</h5>
+						<p>+7-888-888-8888</p>
+					</div>
+					<div class="contacts">
+						<h5>Email</h5>
+						<p>info@geekshop.ru</p>
+					</div>
+					<div class="contacts">
+						<h5>Адрес</h5>
+						<p>В пределах МКАД</p>
+					</div>
+				</div>
+			</div>
+		<div class="clr"></div>
+	</div>
+{% endblock %}

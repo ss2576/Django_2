@@ -1,0 +1,34 @@
+ {% load static %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>{{ title }}</title>
+  {% block css %}
+			<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+			<link rel="stylesheet" href="{% static 'fonts/font-awesome/css/font-awesome.css' %}">
+  {% endblock %}
+</head>
+<body>
+        <div class="admin_container">
+                <div class="div_adminka">
+                    <a class="adminka">Админка</a>
+                </div>
+                <div class="block_menu_admin">
+                  {% block menu %}
+                       {% include 'adminapp/includes/inc_menu.html' %}
+                  {% endblock %}
+                </div>
+            {% block content %}
+            {% endblock %}
+
+            {% block product %}
+            {% endblock %}
+
+            {% block new_product %}
+            {% endblock %}
+      </div>
+</body>
+</html>

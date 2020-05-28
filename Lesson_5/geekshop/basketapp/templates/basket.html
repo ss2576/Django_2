@@ -1,0 +1,19 @@
+{% extends 'base_basket.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+    <div class="basket_list">
+        {% include 'includes/inc_basket_list.html' %}
+    </div>
+    <button class="btn button_home">
+        <a href="{% url 'ordersapp:order_create' %} class="text-in-button">
+            создать заказ
+        </a>
+    </button>
+    <button class="btn button_home">
+        <a href="{% url 'main' %}" class="text-in-button">
+            на главную
+        </a>
+    </button>
+{% endblock %}

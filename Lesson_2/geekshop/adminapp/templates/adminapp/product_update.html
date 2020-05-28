@@ -1,0 +1,22 @@
+{% extends 'adminapp/base.html' %}
+{% load staticfiles %}
+{% load my_tags %}
+
+{% block product %}
+        <div class="users_list">
+             <img src="{{ object.image|media_folder_products }}" alt="">
+             <form class="form-horizontal" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+             <br>
+                <input class="form-control" type="submit" value="сохранить">
+            </form>
+
+            <button class="btn btn-round form-control last">
+                  <a href="{% url 'admin:products' category.pk %}">
+                    назад
+                </a>
+            </button>
+
+        </div>
+{% endblock %}
