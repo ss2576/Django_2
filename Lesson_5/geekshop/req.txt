@@ -4,7 +4,7 @@ automium==0.2.6
 automium-web==0.1.1
 click==7.1.1
 distlib==0.3.0
-Django==2.0
+Django==2.2.13
 filelock==3.0.12
 Flask==1.1.2
 itsdangerous==1.1.0
