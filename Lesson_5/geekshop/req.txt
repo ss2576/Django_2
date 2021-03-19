@@ -11,7 +11,7 @@ itsdangerous==1.1.0
 Jinja2==2.11.1
 legacy==0.1.6
 MarkupSafe==1.1.1
-Pillow==7.1.1
+Pillow==8.1.1
 pytz==2019.3
 six==1.14.0
 sqlparse==0.3.1
